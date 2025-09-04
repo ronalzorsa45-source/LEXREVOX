@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Habla con LEXREVOX</title>
+</head>
+<body>
+
+    <h1 style = "text-align: center;">LEXREVOX 1.0 beta</h1>
+
+    <div class="chat-container" id="chat">
+        {% if historial %}
+            {% for item in historial %}
+                <div class="mensaje {% if item.rol == 'usuario' %}usuario{% else %}lexrevox{% endif %}">
+                    <strong>
+                        {% if item.rol == 'usuario' %}Tú:{% else %}LEXREVOX:{% endif %}
+                    </strong> 
+
+                    <div class="contenido">
+                        {{ item.mensaje }}
+                    </div>
+                    
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align: center;">¡Comienza a hablar con LEXREVOX enviando tu primera pregunta!</p>
+        {% endif %}
+    </div>
+
+    
+    <form method="post" action="{% url 'vista' %}">
+        {% csrf_token %}
+        
+        <br><br>
+
+        <input id="campo" name="campo" placeholder="coloca tu pregunta aqui">
+        
+        <br><br>
+
+        <button type="submit">Enviar</button>
+        <button type="submit" name="borrar" value="1">🗑️ Borrar conversación</button>
+    </form>
+
+    <script>
+        // Scroll automático al final de la conversación
+        const chatContainer = document.getElementById('chat');
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    </script>
+
+    
+</body>
+</html>
