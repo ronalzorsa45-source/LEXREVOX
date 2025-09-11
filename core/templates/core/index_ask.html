@@ -1,12 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 
     <title>Habla con LEXREVOX</title>
+    <!--Link para archivo css y demas elementos de la carpeta "static"-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="short icon" type="image/x-icon" href="{% static 'images/Icono.png' %}">
+
 </head>
 <body>
 
     <h1 style = "text-align: center;">LEXREVOX 1.0 beta</h1>
+    <aside style="float : right;"></aside>
+    <img src="{% static 'images/LOGO_OEA-removebg-preview_9.png' %}" width="150px" alt="imagenes">
 
     <div class="chat-container" id="chat">
         {% if historial %}
