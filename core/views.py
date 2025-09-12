@@ -33,7 +33,7 @@ def index_ask(request):
         respuesta = gemini.generate_augmented_response(valor, historial)
 
          # --- Renderizamos Markdown a HTML ---
-        respuesta_html = mark_safe(markdown.markdown(respuesta))
+        respuesta_html = mark_safe(markdown.markdown(respuesta, extensions=['extra', 'sane_lists']))
 
         # Guarda la respuesta de gemini
         request.session['historial'].append({
