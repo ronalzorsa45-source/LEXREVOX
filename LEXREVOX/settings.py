@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-nzm0=u5!-w-r$1ep)a(g7^lmg0^icrz96mu*&c#=2ioq3$hyb9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'LEXREVOX.wsgi.app'
+WSGI_APPLICATION = 'LEXREVOX.wsgi.application'
 
 
 # Database
