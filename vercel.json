@@ -1,0 +1,14 @@
+{
+    "builds" : [
+        {
+            "src" : "LEXREVOX/wsgi.py",
+            "use" : "@vercel/python"
+        }
+    ],
+    "routes" : [
+        {
+            "src": "/(.*)",
+            "dest": "LEXREVOX/wsgi.py"
+        }
+    ]
+}
